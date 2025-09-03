@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas</title>
+    <script defer src= "/js/anios-cursados.js" ></script>
+    <script defer src="/js/carga-notas.js"></script>
+    
+</head>
+
+<body>
+    <form method="post" action="#">
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ORDEN</th>
+                    <th>MATERIA</th>
+                    <th>NOTA</th>
+                    <th>CONDICIÓN</th>
+                    <th>MES</th>
+                    <th>AÑO</th>
+                    <th>ESTABLECIMIENTO</th>
+                </tr>
+            </thead>
+            
+            <tbody class="anioCursado">
+                <!-- Aquí se insertan los años cursados dinámicamente
+                <tr>
+                    <td colspan="7"><strong></strong></td>
+                </tr>
+                <div class="materia">
+                    <tr>
+                        <td>1</td>
+                        <td>CIENCIAS NATURALES</td>
+                        <td>
+                            <select name="nota[1][naturales]">
+                                <option value="" disabled selected>Seleccione una nota</option>
+                                <option value="10">10</option>
+                                <option value="9">9</option>
+                                <option value="8">8</option>
+                                <option value="7">7</option>
+                                <option value="6">6</option>
+                                <option value="5">5</option>
+                                <option value="4">4</option>
+                                <option value="PENDIENTE">PENDIENTE</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="condicion[1][naturales]">
+                                <option value="REGULAR" selected>REGULAR</option>
+                                <option value="EQUIVALENCIA">EQUIVALENCIA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="mes[1][naturales]">
+                                <option value="FEBRERO">Feb.</option>
+                                <option value="MARZO">Mar.</option>
+                                <option value="ABRIL">Abr.</option>
+                                <option value="MAYO">May.</option>
+                                <option value="JUNIO">Jun.</option>
+                                <option value="JULIO">Jul.</option>
+                                <option value="AGOSTO">Ago.</option>
+                                <option value="SEPTIEMBRE">Sep.</option>
+                                <option value="OCTUBRE">Oct.</option>
+                                <option value="NOVIEMRE">Nov.</option>
+                                <option value="DICIEMBRE" selected>Dic.</option>
+                            </select>
+                        </td>
+                        <td><input type="number" min="1900" name="anio[1][naturales]" pattern="^(19|20)\d{2}$"
+                                title="Ingrese un año válido." required></td>
+                        <td>
+                            <input list="listaEstablecimiento1Naturales" name="establecimiento[1][Naturales]">
+                            <datalist id="listaEstablecimiento1Naturales">
+                                <option value="ESTE ESTABLECIMIENTO">
+                                <option value="OTRO ESTABLECIMIENTO">
+                            </datalist>
+                        </td>
+                    </tr>
+                </div>
+                <tr>
+                    <td>
+                        <label for="estado[1][cursada]">CURSADA</label>
+                        <input type="text" name="estado[1][cursada]" id="estado[1][cursada]" readonly>
+                    </td>
+                    <td>
+                        <label for="promedio[1]">PROMEDIO:</label>
+                        <input type="text" name="promedio[1]" id="promedio[1]">
+                    </td>
+                </tr>
+
+            </tbody>
+            -->
+            
+        </table>
+
+        <button type="submit">Guardar</button>
+
+    </form>
+
+</body>
+
+</html>

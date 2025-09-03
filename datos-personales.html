@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del alumno</title>
+</head>
+
+<body>
+    <h1>Datos del alumno</h1>
+
+    <!--Formulario para los datos personales del alumno-->
+    <form method="post" action="#">
+
+        <fieldset>
+            <!--La etiqueta legend será leída por los lectores de pantalla-->
+            <legend>Datos personales</legend>
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required><br>
+            
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br>
+            
+            <label for="fechaNac">Fecha de nacimiento:</label>
+            <input type="date" id="fechaNac" name="fechaNac" required><br>
+            
+            <label for="ciudadNac">Ciudad de nacimiento:</label>
+            <input type="text" id="ciudadNac" name="ciudadNac" required><br>
+            
+            <label for="provinciaNac">Provincia de nacimiento:</label>
+            <select name="provinciaNac" id="provinciaNac" required>
+                <option value="" disabled selected>Seleccione una provincia</option>
+                <option value="Buenos Aires">Buenos Aires</option>
+                <option value="Catamarca">Catamarca</option>
+                <option value="Córdoba">Córdoba</option>
+                <option value="Corrientes">Corrientes</option>
+                <option value="Chaco">Chaco</option>
+                <option value="Chubut">Chubut</option>
+                <option value="Entre Ríos">Entre Ríos</option>
+                <option value="Formosa">Formosa</option>
+                <option value="Jujuy">Jujuy</option>
+                <option value="La Pampa">La Pampa</option>
+                <option value="La Rioja">La Rioja</option>
+                <option value="Mendoza">Mendoza</option>
+                <option value="Misiones">Misiones</option>
+                <option value="Neuquén">Neuquén</option>
+                <option value="Río Negro">Río Negro</option>
+                <option value="Salta">Salta</option>
+                <option value="San Juan">San Juan</option>
+                <option value="San Luis">San Luis</option>
+                <option value="Santa Cruz">Santa Cruz</option>
+                <option value="Santa Fe">Santa Fe</option>
+                <option value="Santiago del Estero">Santiago del Estero</option>
+                <option value="Tierra del Fuego">Tierra del Fuego</option>
+                <option value="Tucumán">Tucumán</option>
+                <option value="Ciudad Autónoma de Buenos Aires">Ciudad Autónoma de Buenos Aires</option>
+            </select><br>
+            
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" name="dni" pattern="\d{7,8}"
+                title="El DNI debe tener entre 7 y 8 dígitos numéricos" placeholder="Ingrese el DNI sin puntos" required><br>
+        </fieldset>
+
+        <br>
+        <button type="submit">Guardar</button>
+    </form>
+
+</body>
+
+</html>
