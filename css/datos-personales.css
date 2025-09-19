@@ -1,0 +1,21 @@
+body{
+    background-color: #fef6e4;
+}
+
+legend{
+    color:#001858;
+}
+
+label{
+    color: #172c66;
+}
+
+.form{
+    max-width: 600px;;
+}
+
+.btn-guardar{
+    background-color: #f582ae;
+    border-color: #f582ae;
+    color: #001858;
+}

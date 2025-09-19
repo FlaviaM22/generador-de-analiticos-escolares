@@ -1,100 +1,102 @@
 //Valido que el año de aprobación de la materia no sea mayor al año actual
 const anioActual = new Date().getFullYear();//Obtener el año actual
 
-const inputs = document.querySelectorAll('input[name^="anio"]');//Obtener todos los inputs que comiencen con el name "anio"
 
-inputs.forEach(input => { //Asignarle a cada uno un max dinámico igual al año actual
-    input.max = anioActual;
-});
+//Esta función retorna el HTML del div class materia con las materias de cada año
+const retornarMateriaHTML = (materia, index) => {
+    return `
+            <tr>
+                <td class="txt-color">${materia.orden}</td>
+                <td class="txt-color">${materia.nombre}</td>
 
+                <td>
+                    <select name="nota[${index}][${materia.nombre}]">
+                        <option value="" disabled selected>Seleccione una nota</option>
+                        <option value="10">10</option>
+                        <option value="9">9</option>
+                        <option value="8">8</option>
+                        <option value="7">7</option>
+                        <option value="6">6</option>
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="PENDIENTE">PENDIENTE</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="condicion[${index}][${materia.nombre}]">
+                        <option value="REGULAR" selected>REGULAR</option>
+                        <option value="EQUIVALENCIA">EQUIVALENCIA</option>
+                    </select>
+                </td>
+
+                <td>
+                    <select name="mes[${index}][${materia.nombre}]">
+                        <option value="FEBRERO">Feb.</option>
+                        <option value="MARZO">Mar.</option>
+                        <option value="ABRIL">Abr.</option>
+                        <option value="MAYO">May.</option>
+                        <option value="JUNIO">Jun.</option>
+                        <option value="JULIO">Jul.</option>
+                        <option value="AGOSTO">Ago.</option>
+                        <option value="SEPTIEMBRE">Sep.</option>
+                        <option value="OCTUBRE">Oct.</option>
+                        <option value="NOVIEMRE">Nov.</option>
+                        <option value="DICIEMBRE" selected>Dic.</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="number" min="1900" name="anio[${index}][${materia.nombre}]" pattern="^(19|20)\d{2}$"
+                    title="Ingrese un año válido."></td>
+                <td>
+                    <input list="listaEstablecimiento[${index}][${materia.nombre}]" name="establecimiento[${index}][${materia.nombre}]">
+                    <datalist id="listaEstablecimiento[${index}][${materia.nombre}]">
+                        <option value="ESTE ESTABLECIMIENTO">
+                        <option value="OTRO ESTABLECIMIENTO">
+                    </datalist>
+                </td>
+            </tr>
+    `
+};
 
 //Esta función retorna el HTML de un tbody con las materias de un año cursado
-const retornarTBodyHTML = (anioCursado) => {
-    return `
-            <tbody class="anioCursado">
-
-                <tr>
-                    <td colspan="7"><strong>${anioCursado.nombre}</strong></td>
+const retornarTBodyHTML = (anioCursado, index) => {
+    let html = `
+            <tbody>
+                <tr class="anio-cursado">
+                    <td class="txt-color" colspan="7"><strong>${anioCursado.nombre}</strong></td>
                 </tr>                
+            `
+        ;
+    //Agregar las materias del año
+    anioCursado.materias.forEach(materia => {
+        html += retornarMateriaHTML(materia, index);
+    });
+
+    //Agregar fila de CURSADA y PROMEDIO
+    html += `
                 <tr>
                     <td>
-                        <label for="estado[1][cursada]">CURSADA</label>
-                        <input type="text" name="estado[1][cursada]" id="estado[1][cursada]">
+                        <label class="txt-color" for="estado[${index}][cursada]"><strong>CURSADA:</strong></label>
+                        <input type="text" name="estado[${index}][cursada]" id="estado[${index}][cursada]">
                     </td>
-                    <td>
-                        <label for="promedio[1]">PROMEDIO:</label>
-                        <input type="text" name="promedio[1]" id="promedio[1]">
+                    <td >
+                        <label class="txt-color" for="promedio[${index}]"><strong>PROMEDIO:</strong></label>
+                        <input type="text" name="promedio[${index}]" id="promedio[${index}]">
                     </td>
-                </tr>
+                </tr>   
+        </tbody>
+    `;
 
-            </tbody>`
-};
-//Esta función retorna el HTML del div class materia con las materias de cada año
-const retornarMateriaHTML = (materia) => {
-    return `
-            <div class="materia">
-                    <tr>
-                        <td>${anioCursado.materias.orden}</td>
-                        <td>${anioCursado.materias.nombre}</td>
-                        <td>
-                            <select name="nota[1][naturales]">
-                                <option value="" disabled selected>Seleccione una nota</option>
-                                <option value="10">10</option>
-                                <option value="9">9</option>
-                                <option value="8">8</option>
-                                <option value="7">7</option>
-                                <option value="6">6</option>
-                                <option value="5">5</option>
-                                <option value="4">4</option>
-                                <option value="PENDIENTE">PENDIENTE</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select name="condicion[1][naturales]">
-                                <option value="REGULAR" selected>REGULAR</option>
-                                <option value="EQUIVALENCIA">EQUIVALENCIA</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select name="mes[1][naturales]">
-                                <option value="FEBRERO">Feb.</option>
-                                <option value="MARZO">Mar.</option>
-                                <option value="ABRIL">Abr.</option>
-                                <option value="MAYO">May.</option>
-                                <option value="JUNIO">Jun.</option>
-                                <option value="JULIO">Jul.</option>
-                                <option value="AGOSTO">Ago.</option>
-                                <option value="SEPTIEMBRE">Sep.</option>
-                                <option value="OCTUBRE">Oct.</option>
-                                <option value="NOVIEMRE">Nov.</option>
-                                <option value="DICIEMBRE" selected>Dic.</option>
-                            </select>
-                        </td>
-                        <td><input type="number" min="1900" name="anio[1][naturales]" pattern="^(19|20)\d{2}$"
-                                title="Ingrese un año válido." required></td>
-                        <td>
-                            <input list="listaEstablecimiento1Naturales" name="establecimiento[1][Naturales]">
-                            <datalist id="listaEstablecimiento1Naturales">
-                                <option value="ESTE ESTABLECIMIENTO">
-                                <option value="OTRO ESTABLECIMIENTO">
-                            </datalist>
-                        </td>
-                    </tr>
-                </div>`
+    return html;
 };
 
 
-const contenedorAnios = document.querySelector('.anioCursado');
-const contenedorMateriasAnio = document.querySelector('.materia');
+const tabla = document.querySelector('table');
 
 //Esta función carga los años cursados en el contenedorAnios y llama a la función retornarTBodyHTML
 const cargarAniosYmaterias = (array) => {
-    //contenedorAnios.innerHTML = "";//Esta línea limpia el contenedor antes de cargar los productos para evitar duplicados    
-    array.forEach(anioCursado => {
-        contenedorAnios.innerHTML += retornarTBodyHTML(anioCursado)
-        array.forEach(materia => {
-            contenedorMateriasAnio.innerHTML += retornarMateriaHTML(materia)
-        });
+    array.forEach((anio, index ) => {
+        tabla.innerHTML += retornarTBodyHTML(anio, index);
     });
 };
 
@@ -103,3 +105,16 @@ cargarAniosYmaterias(aniosCursados);
 
 
 
+const inputs = document.querySelectorAll('input[name^="anio"]');//Obtener todos los inputs que comiencen con el name "anio"
+inputs.forEach(input => { //Agregar el atributo max con el año actual
+    input.setAttribute("max", anioActual);
+});
+
+
+
+//Informo que los datos se guardaron correctamente
+document.querySelector('#form-notas').addEventListener('submit', function(event) {
+    event.preventDefault();//Evito la recarga de la página
+    alert('¡Datos guardados correctamente!');
+    /*Aquí se puede agregar código para guardar los datos en el LocalStorage */
+});

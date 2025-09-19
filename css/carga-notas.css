@@ -1,0 +1,29 @@
+body{
+    background-color: #fef6e4;
+}
+
+thead{
+    color: #001858;
+    background-color: #f3d2c1;
+}
+
+.txt-color{
+    color:#172c66;
+}
+
+.anio-cursado{
+    color: #172c66; 
+    background-color: #f3d2c1;
+}
+
+.btn-guardar{
+    background-color: #f582ae;
+    border-color: #f582ae;
+    color: #001858;
+}
+
+.btn-volver{
+    background-color: #f582ae;
+    border-color: #f582ae;
+    color: #001858;
+}
