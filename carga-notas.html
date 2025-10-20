@@ -19,8 +19,17 @@
 </head>
 
 <body>
-    <div class="container form">
-        <form class="row g-2 mt-3" id="form-notas" method="post" action="#">
+    <div class="container mt-4">
+        <form id="form-notas" method="post" action="#">
+            <div class="row mb-2">
+                <div class="col-auto">
+                    <label class="form-label fs-6 fw-bold txt-color" for="serie">SERIE:</label>
+                </div>
+                <div class="col-3">
+                    <input class="form-control form-control-sm" type="number" id="serie" name="serie"
+                        placeholder="Esta celda se completará automáticamente" readonly>
+                </div>
+            </div>
             <table class="table">
 
                 <thead class="text-center">
@@ -34,14 +43,22 @@
                         <th>ESTABLECIMIENTO</th>
                     </tr>
                 </thead>
-
+                <!-- Aquí se renderizan las filas de materias según los años cursados -->
             </table>
             <br>
-            <button class="btn btn-primary d-grid gap-2 col-6 mx-auto btn-guardar" type="submit">Guardar</button>
+
+            <div id="mensaje"></div><!--Aquí se renderiza el alert de guardado con éxito-->
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-guardar" type="submit">Guardar</button>
+            </div>
 
         </form>
-        <br>
-        <a class="btn btn-primary d-grid gap-2 col-6 mx-auto btn-volver" href="/datos-personales.html">Volver</a><!--Agregar LocalStorage para mantener los datos cargados visibles-->
+
+        <div class="d-grid gap-2 col-6 mx-auto mt-2 mb-4">
+            <a class="btn btn-volver"
+                href="/datos-personales.html">Volver</a>
+        </div>
+
     </div>
 
 </body>

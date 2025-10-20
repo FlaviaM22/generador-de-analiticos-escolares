@@ -19,3 +19,18 @@ label{
     border-color: #f582ae;
     color: #001858;
 }
+
+/* Para Chrome, Safari, Edge */
+#libroMatriz::-webkit-inner-spin-button,
+#libroMatriz::-webkit-outer-spin-button,
+#folio::-webkit-inner-spin-button,
+#folio::-webkit-outer-spin-button {
+    -webkit-appearance: none;/*Oculta los spinners del input*/
+    margin: 0;/*Quita márgenes extra*/
+}
+
+/*Para Firefox*/
+#libroMatriz, #folio {
+    -moz-appearance: textfield;/*Hace que se vea como un input normal*/
+}
+

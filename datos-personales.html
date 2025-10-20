@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos del alumno</title>
     <!--JavaScript-->
-    <script defer src="/js/datos-personales.js"></script>
+    <script type="module" defer src="/js/datos-personales.js"></script>
     <!--Favicon-->
     <link rel="shortcut icon" href="/images/favicon-16x16.png" type="image/x-icon">
     <!--CDN Bootstrap-->
@@ -27,16 +27,16 @@
                 <legend class="h1 text-center">Datos del alumno</legend>
 
                 <label class="form-label" for="apellido">Apellido:</label>
-                <input class="form-control" type="text" id="apellido" name="apellido" required><br>
+                <input class="form-control" type="text" id="apellido" name="apellido" required>
                 
                 <label class="form-label" for="nombre">Nombre:</label>
-                <input class="form-control" type="text" id="nombre" name="nombre" required><br>
+                <input class="form-control" type="text" id="nombre" name="nombre" required>
 
                 <label class="form-label" for="fechaNac">Fecha de nacimiento:</label>
-                <input class="form-control" type="date" id="fechaNac" name="fechaNac" required><br>
+                <input class="form-control" type="date" id="fechaNac" name="fechaNac" required>
 
                 <label class="form-label" for="ciudadNac">Ciudad de nacimiento:</label>
-                <input class="form-control" type="text" id="ciudadNac" name="ciudadNac" required><br>
+                <input class="form-control" type="text" id="ciudadNac" name="ciudadNac" required>
 
                 <label class="form-label" for="provinciaNac">Provincia de nacimiento:</label>
                 <select class="form-select" name="provinciaNac" id="provinciaNac" required>
@@ -65,16 +65,23 @@
                     <option value="Tierra del Fuego">Tierra del Fuego</option>
                     <option value="Tucumán">Tucumán</option>
                     <option value="Ciudad Autónoma de Buenos Aires">Ciudad Autónoma de Buenos Aires</option>
-                </select><br>
+                </select>
 
                 <label class="form-label" for="dni">DNI:</label>
-                <input class="form-control" type="text" id="dni" name="dni" pattern="\d{7,8}"
+                <input class="form-control" type="text" id="dni" name="dni" pattern="[0-9]{7,8}" maxlength="8"
                     title="El DNI debe tener entre 7 y 8 dígitos numéricos" placeholder="Ingrese el DNI sin puntos"
-                    required><br>
+                    required>
+
+                <label class="form-label" for="libroMatriz">Libro Matriz:</label>
+                <input class="form-control" type="number" id="libroMatriz" name="libroMatriz" required>
+
+                <label class="form-label" for="folio">Folio:</label>
+                <input class="form-control" type="number" id="folio" name="folio" required>
+
             </fieldset>
 
-            <br>
-            <div id="mensaje"></div>
+            <br>     
+            <div id="mensaje"></div><!--Aquí se renderiza el alert de guardado con éxito-->
             <button class="btn btn-primary btn-guardar" type="submit">Guardar</button>
 
         </form>
