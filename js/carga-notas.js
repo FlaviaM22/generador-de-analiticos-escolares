@@ -8,7 +8,7 @@ const retornarMateriaHTML = (materia, index) => {
                 <td class="text-center txt-color">${materia.nombre}</td>
 
                 <td>
-                    <select name="nota[${index}][${materia.nombre}]">
+                    <select class="form-select" name="nota[${index}][${materia.nombre}]">
                         <option value="" disabled selected>Seleccione una nota</option>
                         <option value="10">10</option>
                         <option value="9">9</option>
@@ -20,15 +20,16 @@ const retornarMateriaHTML = (materia, index) => {
                         <option value="PENDIENTE">PENDIENTE</option>
                     </select>
                 </td>
+
                 <td>
-                    <select name="condicion[${index}][${materia.nombre}]">
+                    <select class="form-select" name="condicion[${index}][${materia.nombre}]">
                         <option value="REGULAR" selected>REGULAR</option>
                         <option value="EQUIVALENCIA">EQUIVALENCIA</option>
                     </select>
                 </td>
 
                 <td>
-                    <select name="mes[${index}][${materia.nombre}]">
+                    <select class="form-select" name="mes[${index}][${materia.nombre}]">
                         <option value="FEBRERO">Feb.</option>
                         <option value="MARZO">Mar.</option>
                         <option value="ABRIL">Abr.</option>
@@ -43,10 +44,10 @@ const retornarMateriaHTML = (materia, index) => {
                     </select>
                 </td>
                 <td>
-                    <input type="number" min="1900" name="anio[${index}][${materia.nombre}]" pattern="^(19|20)\d{2}$"
+                    <input class="form-control" type="number" min="1900" name="anio[${index}][${materia.nombre}]" pattern="^(19|20)\d{2}$"
                     title="Ingrese un año válido."></td>
                 <td>
-                    <input list="listaEstablecimiento[${index}][${materia.nombre}]" name="establecimiento[${index}][${materia.nombre}]">
+                    <input class="form-control" list="listaEstablecimiento[${index}][${materia.nombre}]" name="establecimiento[${index}][${materia.nombre}]">
                     <datalist id="listaEstablecimiento[${index}][${materia.nombre}]">
                         <option value="ESTE ESTABLECIMIENTO">
                         <option value="OTRO ESTABLECIMIENTO">
@@ -74,22 +75,29 @@ const retornarTBodyHTML = (anioCursado, index) => {
     html += `
                
                 <tr>
-                         
+                        
                     <td colspan="2">
                         <div class="d-flex align-items-center">
-                            <label class="form-label fw-bold txt-color me-2" for="promedio[${index}][${anioCursado.promedio}]">PROMEDIO:</label>
-                            
-                            <input class="form-control form-control-sm" type="text" name="promedio[${index}][${anioCursado.promedio}]" id="promedio[${index}][${anioCursado.promedio}]" placeholder="Esta celda se completará automáticamente" readonly>
+                            <div class="col-auto">    
+                                <label class="form-label fw-bold txt-color me-2" for="curso[${index}][${anioCursado.curso}]">CURSO:</label>
+                            </div>
+                        
+                            <div class="col">
+                                <input class="form-control form-control-sm" type="text" name="curso[${index}][${anioCursado.curso}]" id="curso[${index}][${anioCursado.curso}]"placeholder="Esta celda se completa automáticamente" readonly>
+                            </div>
                         </div>
                     </td>
-                    <td colspan="2"
-                            
+
+                    <td colspan="2">                            
                         <div class="d-flex align-items-center">
-                            <label class="form-label fw-bold txt-color me-2" for="curso[${index}][${anioCursado.curso}]">CURSO:</label>
-                                      
-                            <input class="form-control form-control-sm" type="text" name="curso[${index}][${anioCursado.curso}]" id="curso[${index}][${anioCursado.curso}]"placeholder="Esta celda se completará automáticamente" readonly>
-                        </div>
-                         
+                            <div class="col-auto">
+                                <label class="form-label fw-bold txt-color me-2" for="promedio[${index}][${anioCursado.promedio}]">PROMEDIO:</label>
+                            </div>  
+                        
+                            <div class="col">
+                                <input class="form-control form-control-sm" type="text" name="promedio[${index}][${anioCursado.promedio}]" id="promedio[${index}][${anioCursado.promedio}]" placeholder="Esta celda se completa automáticamente" readonly>
+                            </div>
+                        </div>                         
                     </td>
                         
                 </tr>  
@@ -127,7 +135,7 @@ document.querySelector('#form-notas').addEventListener('submit', function (event
     event.preventDefault();//Evito la recarga de la página
 
     document.querySelector('#mensaje').innerHTML = `
-    <div class="alert alert-success alert-dismissible fade show d-grid gap-2 col-6 mx-auto" role = "alert">
+    <div class="alert alert-success alert-dismissible fade show d-grid gap-2 col-4 mx-auto" role = "alert">
      ✅ Los datos se guardaron correctamente.
      </div>
     `;

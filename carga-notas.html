@@ -19,47 +19,81 @@
 </head>
 
 <body>
-    <div class="container mt-4">
-        <form id="form-notas" method="post" action="#">
-            <div class="row mb-2">
-                <div class="col-auto">
-                    <label class="form-label fs-6 fw-bold txt-color" for="serie">SERIE:</label>
-                </div>
-                <div class="col-3">
-                    <input class="form-control form-control-sm" type="number" id="serie" name="serie"
-                        placeholder="Esta celda se completará automáticamente" readonly>
+    <header>
+
+        <nav class="navbar navbar-expand-lg bg-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold fs-2" href="./index.html">Analíticos escolares</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav me-auto d-flex gap-4">
+                        <a class="nav-link active fw-bold fs-6" aria-current="page" href="./index.html">Inicio</a>
+                        <a class="nav-link fw-bold fs-6" href="./datos-personales.html">Datos personales</a>
+                        <a class="nav-link fw-bold fs-6" href="./carga-notas.html">Notas</a>
+                    </div>
                 </div>
             </div>
-            <table class="table">
+        </nav>
 
-                <thead class="text-center">
-                    <tr>
-                        <th>ORDEN</th>
-                        <th>MATERIA</th>
-                        <th>NOTA</th>
-                        <th>CONDICIÓN</th>
-                        <th>MES</th>
-                        <th>AÑO</th>
-                        <th>ESTABLECIMIENTO</th>
-                    </tr>
-                </thead>
-                <!-- Aquí se renderizan las filas de materias según los años cursados -->
-            </table>
-            <br>
+    </header>
 
-            <div id="mensaje"></div><!--Aquí se renderiza el alert de guardado con éxito-->
-            <div class="d-grid gap-2 col-6 mx-auto">
-                <button class="btn btn-guardar" type="submit">Guardar</button>
+    <main>
+
+        <div class="container mt-5">
+            <!--Formulario para la carga de notas-->
+            <form id="form-notas" method="post" action="#">
+
+                <div class="row mb-2">
+                    <div class="col-auto">
+                        <label class="form-label fs-6 fw-bold txt-color" for="serie">SERIE:</label>
+                    </div>
+                    <div class="col-3">
+                        <input class="form-control form-control-sm" type="number" id="serie" name="serie"
+                            placeholder="Esta celda se completa automáticamente" readonly>
+                    </div>
+                </div>
+
+                <table class="table">
+
+                    <thead class="text-center">
+                        <tr>
+                            <th>ORDEN</th>
+                            <th>MATERIA</th>
+                            <th>NOTA</th>
+                            <th>CONDICIÓN</th>
+                            <th>MES</th>
+                            <th>AÑO</th>
+                            <th>ESTABLECIMIENTO</th>
+                        </tr>
+                    </thead>
+                    <!-- Aquí se renderizan las filas de materias según los años cursados -->
+                </table>
+                <br>
+
+                <div id="mensaje"></div><!--Aquí se renderiza el alert de guardado con éxito-->
+
+                <div class="d-grid col-3 mx-auto">
+                    <button class="btn btn-guardar" type="submit">Guardar</button>
+                </div>
+
+            </form>
+
+            <div class="d-grid col-3 mx-auto mt-2 mb-4">
+                <a class="btn btn-volver" href="/datos-personales.html">Volver</a>
             </div>
 
-        </form>
-
-        <div class="d-grid gap-2 col-6 mx-auto mt-2 mb-4">
-            <a class="btn btn-volver"
-                href="/datos-personales.html">Volver</a>
         </div>
 
-    </div>
+    </main>
+
+    <!--CDN Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+        </script>
 
 </body>
 

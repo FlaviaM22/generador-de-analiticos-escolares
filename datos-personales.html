@@ -18,76 +18,107 @@
 
 <body>
 
-    <div class="container form">
-        <!--Formulario para los datos personales del alumno-->
-        <form class="row g-2 mt-3"  id="form-datos-personales" method="post" action="#">
+    <header>
 
-            <fieldset>
-                <!--La etiqueta legend será leída por los lectores de pantalla-->
-                <legend class="h1 text-center">Datos del alumno</legend>
+        <nav class="navbar navbar-expand-lg bg-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold fs-2" href="./index.html">Analíticos escolares</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav me-auto d-flex gap-4">
+                        <a class="nav-link active fw-bold fs-6" aria-current="page" href="./index.html">Inicio</a>
+                        <a class="nav-link fw-bold fs-6" href="./datos-personales.html">Datos personales</a>
+                        <a class="nav-link fw-bold fs-6" href="./carga-notas.html">Notas</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
-                <label class="form-label" for="apellido">Apellido:</label>
-                <input class="form-control" type="text" id="apellido" name="apellido" required>
-                
-                <label class="form-label" for="nombre">Nombre:</label>
-                <input class="form-control" type="text" id="nombre" name="nombre" required>
+    </header>
 
-                <label class="form-label" for="fechaNac">Fecha de nacimiento:</label>
-                <input class="form-control" type="date" id="fechaNac" name="fechaNac" required>
+    <main>
 
-                <label class="form-label" for="ciudadNac">Ciudad de nacimiento:</label>
-                <input class="form-control" type="text" id="ciudadNac" name="ciudadNac" required>
+        <div class="container form">
+            <!--Formulario para los datos personales del alumno-->
+            <form class="row g-0 mt-4" id="form-datos-personales" method="post" action="#">
 
-                <label class="form-label" for="provinciaNac">Provincia de nacimiento:</label>
-                <select class="form-select" name="provinciaNac" id="provinciaNac" required>
-                    <option value="" disabled selected>Seleccione una provincia</option>
-                    <option value="Buenos Aires">Buenos Aires</option>
-                    <option value="Catamarca">Catamarca</option>
-                    <option value="Córdoba">Córdoba</option>
-                    <option value="Corrientes">Corrientes</option>
-                    <option value="Chaco">Chaco</option>
-                    <option value="Chubut">Chubut</option>
-                    <option value="Entre Ríos">Entre Ríos</option>
-                    <option value="Formosa">Formosa</option>
-                    <option value="Jujuy">Jujuy</option>
-                    <option value="La Pampa">La Pampa</option>
-                    <option value="La Rioja">La Rioja</option>
-                    <option value="Mendoza">Mendoza</option>
-                    <option value="Misiones">Misiones</option>
-                    <option value="Neuquén">Neuquén</option>
-                    <option value="Río Negro">Río Negro</option>
-                    <option value="Salta">Salta</option>
-                    <option value="San Juan">San Juan</option>
-                    <option value="San Luis">San Luis</option>
-                    <option value="Santa Cruz">Santa Cruz</option>
-                    <option value="Santa Fe">Santa Fe</option>
-                    <option value="Santiago del Estero">Santiago del Estero</option>
-                    <option value="Tierra del Fuego">Tierra del Fuego</option>
-                    <option value="Tucumán">Tucumán</option>
-                    <option value="Ciudad Autónoma de Buenos Aires">Ciudad Autónoma de Buenos Aires</option>
-                </select>
+                <fieldset>
+                    <!--La etiqueta legend será leída por los lectores de pantalla-->
+                    <legend class="h2 fw-bold mt-2 mb-0 text-center">Datos del alumno</legend>
 
-                <label class="form-label" for="dni">DNI:</label>
-                <input class="form-control" type="text" id="dni" name="dni" pattern="[0-9]{7,8}" maxlength="8"
-                    title="El DNI debe tener entre 7 y 8 dígitos numéricos" placeholder="Ingrese el DNI sin puntos"
-                    required>
+                    <label class="form-label fw-bold" for="apellido">Apellido:</label>
+                    <input class="form-control" type="text" id="apellido" name="apellido" required>
 
-                <label class="form-label" for="libroMatriz">Libro Matriz:</label>
-                <input class="form-control" type="number" id="libroMatriz" name="libroMatriz" required>
+                    <label class="form-label fw-bold" for="nombre">Nombre:</label>
+                    <input class="form-control" type="text" id="nombre" name="nombre" required>
 
-                <label class="form-label" for="folio">Folio:</label>
-                <input class="form-control" type="number" id="folio" name="folio" required>
+                    <label class="form-label fw-bold" for="fechaNac">Fecha de nacimiento:</label>
+                    <input class="form-control" type="date" id="fechaNac" name="fechaNac" required>
 
-            </fieldset>
+                    <label class="form-label fw-bold" for="ciudadNac">Ciudad de nacimiento:</label>
+                    <input class="form-control" type="text" id="ciudadNac" name="ciudadNac" required>
 
-            <br>     
-            <div id="mensaje"></div><!--Aquí se renderiza el alert de guardado con éxito-->
-            <button class="btn btn-primary btn-guardar" type="submit">Guardar</button>
+                    <label class="form-label fw-bold" for="provinciaNac">Provincia de nacimiento:</label>
+                    <select class="form-select" name="provinciaNac" id="provinciaNac" required>
+                        <option value="" disabled selected>Seleccione una provincia</option>
+                        <option value="Buenos Aires">Buenos Aires</option>
+                        <option value="Catamarca">Catamarca</option>
+                        <option value="Córdoba">Córdoba</option>
+                        <option value="Corrientes">Corrientes</option>
+                        <option value="Chaco">Chaco</option>
+                        <option value="Chubut">Chubut</option>
+                        <option value="Entre Ríos">Entre Ríos</option>
+                        <option value="Formosa">Formosa</option>
+                        <option value="Jujuy">Jujuy</option>
+                        <option value="La Pampa">La Pampa</option>
+                        <option value="La Rioja">La Rioja</option>
+                        <option value="Mendoza">Mendoza</option>
+                        <option value="Misiones">Misiones</option>
+                        <option value="Neuquén">Neuquén</option>
+                        <option value="Río Negro">Río Negro</option>
+                        <option value="Salta">Salta</option>
+                        <option value="San Juan">San Juan</option>
+                        <option value="San Luis">San Luis</option>
+                        <option value="Santa Cruz">Santa Cruz</option>
+                        <option value="Santa Fe">Santa Fe</option>
+                        <option value="Santiago del Estero">Santiago del Estero</option>
+                        <option value="Tierra del Fuego">Tierra del Fuego</option>
+                        <option value="Tucumán">Tucumán</option>
+                        <option value="Ciudad Autónoma de Buenos Aires">Ciudad Autónoma de Buenos Aires</option>
+                    </select>
 
-        </form>
+                    <label class="form-label fw-bold" for="dni">DNI:</label>
+                    <input class="form-control" type="text" id="dni" name="dni" pattern="[0-9]{7,8}" maxlength="8"
+                        title="El DNI debe tener entre 7 y 8 dígitos numéricos" placeholder="Ingrese el DNI sin puntos"
+                        required>
 
-    </div>
+                    <label class="form-label fw-bold" for="libroMatriz">Libro Matriz:</label>
+                    <input class="form-control" type="number" id="libroMatriz" name="libroMatriz" required>
 
+                    <label class="form-label fw-bold" for="folio">Folio:</label>
+                    <input class="form-control" type="number" id="folio" name="folio" required>
+
+                </fieldset>
+
+    
+                <div id="mensaje"></div><!--Aquí se renderiza el alert de guardado con éxito-->
+                <div class="d-grid col-3 mt-4 mx-auto">
+                    <button class="btn btn-primary fs-5 fw-bold btn-guardar" type="submit">Guardar</button>
+                </div>
+            </form>
+
+        </div>
+
+    </main>
+
+    <!--CDN Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -1,4 +1,3 @@
-/*
 const aniosCursados = [
     {
         nombre: "PRIMER AÑO",
@@ -202,7 +201,7 @@ const aniosCursados = [
             },
             {
                 orden: 6,
-                nombre: "INTROCUCCIÓN A LA QUÍMICA",
+                nombre: "INTRODUCCIÓN A LA QUÍMICA",
             },
             {
                 orden: 7,
@@ -228,8 +227,8 @@ const aniosCursados = [
     }
 
 ];
-*/
 
+/*
 const aniosCursados = [
     {
         nombre: "PRIMER AÑO",
@@ -316,3 +315,4 @@ const aniosCursados = [
     }
 
 ]
+*/

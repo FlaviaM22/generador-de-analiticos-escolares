@@ -8,7 +8,7 @@ document.querySelector('#form-datos-personales').addEventListener('submit', func
 
     //Informo que los datos se guardaron correctamente
     document.querySelector('#mensaje').innerHTML = `
-     <div class="alert alert-success alert-dismissible fade show mt-3" role = "alert">
+     <div class="alert alert-success alert-dismissible fade show mt-2 d-grid gap-2 col-8 mx-auto" role = "alert">
      ✅ Los datos se guardaron correctamente.
      </div> 
     `;
