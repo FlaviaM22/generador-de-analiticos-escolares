@@ -34,11 +34,11 @@ const aniosCursados = [
                 orden: 8,
                 nombre: "CONSTRUCCIÓN DE LA CIUDADANÍA"
             }
-        ]    
+        ]
     },
     {
         nombre: "SEGUNDO AÑO",
-        materias:[
+        materias: [
             {
                 orden: 1,
                 nombre: "BIOLOGÍA"
@@ -83,7 +83,7 @@ const aniosCursados = [
     },
     {
         nombre: "TERCER AÑO",
-        materias:[
+        materias: [
             {
                 orden: 1,
                 nombre: "BIOLOGÍA"
@@ -123,12 +123,12 @@ const aniosCursados = [
             {
                 orden: 10,
                 nombre: "PRÁCTICAS DEL LENGUAJE"
-            }          
+            }
         ]
     },
     {
         nombre: "CUARTO AÑO",
-        materias:[
+        materias: [
             {
                 orden: 1,
                 nombre: "LITERATURA",
@@ -140,7 +140,7 @@ const aniosCursados = [
             {
                 orden: 3,
                 nombre: "EDCUACIÓN FÍSICA",
-                
+
             },
             {
                 orden: 4,
@@ -178,7 +178,7 @@ const aniosCursados = [
     },
     {
         nombre: "QUINTO AÑO",
-        materias:[
+        materias: [
             {
                 orden: 1,
                 nombre: "LITERATURA",
@@ -227,6 +227,15 @@ const aniosCursados = [
     }
 
 ];
+
+// Adaptar a lo que espera carga-notas.js
+const alumno = {
+    apellido: "",
+    nombre: "",
+    serie: "",
+    anios: aniosCursados
+};
+
 
 /*
 const aniosCursados = [
