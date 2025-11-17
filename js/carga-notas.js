@@ -1,3 +1,8 @@
+import { aniosCursados } from "./anios-cursados.js";
+import { inicializarCalculosNotas } from "./calculos-notas.js";
+import { guardarNotasEnFirestore } from "./firebase-notas.js";
+
+
 const anioActual = new Date().getFullYear();//Obtener el año actual
 
 //Esta función retorna el HTML del div class materia con las materias de cada año
@@ -71,10 +76,10 @@ const retornarTBodyHTML = (anioCursado, index) => {
         html += retornarMateriaHTML(materia, index);
     });
 
-    //Agregar fila de CURSADA y PROMEDIO
+    //Agregar fila de CURSO y PROMEDIO
     html += `
                
-                <tr>
+                <tr class="curso-promedio">
                         
                     <td colspan="2">
                         <div class="d-flex align-items-center">
@@ -121,6 +126,9 @@ const cargarAniosYmaterias = (array) => {
 //Llamada a la función para cargar los años
 cargarAniosYmaterias(aniosCursados);
 
+//Inicializo los cálculos automáticos de promedio, curso y serie
+inicializarCalculosNotas();
+
 
 //Valido que el año de aprobación de la materia no sea mayor al año actual
 const inputs = document.querySelectorAll('input[name^="anio"]');//Obtener todos los inputs que comiencen con el name "anio"
@@ -129,15 +137,8 @@ inputs.forEach(input => { //Agregar el atributo max con el año actual
 });
 
 
-
-//Informo que los datos se guardaron correctamente
-document.querySelector('#form-notas').addEventListener('submit', function (event) {
-    event.preventDefault();//Evito la recarga de la página
-
-    document.querySelector('#mensaje').innerHTML = `
-    <div class="alert alert-success alert-dismissible fade show d-grid gap-2 col-4 mx-auto" role = "alert">
-     ✅ Los datos se guardaron correctamente.
-     </div>
-    `;
-
+// Escucha el evento submit y llama a la función importada
+document.querySelector('#form-notas').addEventListener('submit', async function (event) {
+    event.preventDefault(); // Evito recarga de página
+    await guardarNotasEnFirestore();    
 });

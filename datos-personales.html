@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos del alumno</title>
     <!--JavaScript-->
-    <script type="module" defer src="/js/datos-personales.js"></script>
+    <script type="module" defer src="./js/datos-personales.js"></script>
     <!--Favicon-->
     <link rel="shortcut icon" href="/images/favicon-16x16.png" type="image/x-icon">
     <!--CDN Bootstrap-->
@@ -29,11 +29,18 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav me-auto d-flex gap-4">
-                        <a class="nav-link active fw-bold fs-6" aria-current="page" href="./index.html">Inicio</a>
-                        <a class="nav-link fw-bold fs-6" href="./datos-personales.html">Datos personales</a>
-                        <a class="nav-link fw-bold fs-6" href="./carga-notas.html">Notas</a>
-                    </div>
+
+                    <ul class="navbar-nav ms-auto d-flex gap-5">
+                        <li class="nav-item">
+                            <a class="nav-link active fw-bold fs-6" aria-current="page" href="./index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold fs-6" href="./datos-personales.html">Datos personales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold fs-6" href="./carga-notas.html">Notas</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -104,7 +111,7 @@
 
                 </fieldset>
 
-    
+
                 <div id="mensaje"></div><!--Aquí se renderiza el alert de guardado con éxito-->
                 <div class="d-grid col-3 mt-4 mx-auto">
                     <button class="btn btn-primary fs-5 fw-bold btn-guardar" type="submit">Guardar</button>
